@@ -65,8 +65,8 @@ sudo pacman -S git autotiling swaybg waybar kitty rofi swaylock papirus-icon-the
 yay -S waytrogen wlogout swayfx
 cd ~
 git clone https://github.com/aethelredfx/lshell
-cp -r ~/liquid-shell/* ~/.config/
-rm -rf ~/liquid-shell
+cp -r ~/lshell/* ~/.config/
+rm -rf ~/lshell
 ```
 
 # Once installed, do this
