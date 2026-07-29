@@ -30,6 +30,7 @@ Minimalist configuration for SwayFX (Wayland).
 | Keybind | Action | Command |
 | :--- | :--- | :--- |
 | **Applications** | | |
+| `Mod` + `s` | Config Settings | `kitty python3 $HOME/.config/lshell.py` |
 | `Mod` + `Enter` | Open Terminal | `$term (Kitty)` |
 | `Mod` + `d` | App Launcher | `rofi -show drun` |
 | `Mod` + `c` | Clipboard Manager | `cliphist` |
@@ -61,7 +62,7 @@ Minimalist configuration for SwayFX (Wayland).
 # Install
 ## Arch Linux
 ```bash
-sudo pacman -S git autotiling swaybg waybar kitty rofi swaylock papirus-icon-theme ttf-fira-code ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols gsimplecal wtype rofi-emoji dolphin bluez bluez-utils blueman 
+sudo pacman -S git autotiling swaybg waybar kitty rofi swaylock papirus-icon-theme ttf-fira-code ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols gsimplecal wtype rofi-emoji dolphin bluez bluez-utils blueman python
 yay -S waytrogen wlogout swayfx
 cd ~
 git clone https://github.com/aethelredfx/lshell
