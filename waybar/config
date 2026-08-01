@@ -1,96 +1,16 @@
 {
-    "layer": "top",
-    "position": "top",
-    "height": 32,
-    "margin-top": 6,
-    "margin-left": 16,
-    "margin-right": 16,
-    "spacing": 0,
-    "modules-left": [
-        "custom/launcher", 
-        "sway/workspaces", 
-        "hyprland/workspaces", 
-        "custom/spotify",
-        "custom/language"
-    ],
-    "modules-center": [
-        "clock#time", 
-        "clock#date"
-    ],
-    "modules-right": [
-        "pulseaudio", 
-        "network", 
-        "battery", 
-        "custom/power"
-    ],
-    "custom/launcher": {
-        "format": "Apps",
-        "on-click": "rofi -show drun"
-    },
-    "custom/language": {
-        "format": "{}",
-        "exec": "swaymsg -t get_inputs | jq -r '.[] | select(.type == \"keyboard\") | .xkb_active_layout_name' | head -n1",
-        "interval": 1,
-        "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
-    },
-    "sway/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "format": "{name}"
-    },
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "format": "{name}"
-    },
-    "custom/spotify": {
-        "format": "  {}",
-        "escape": true,
-        "interval": 1,
-        "max-length": 25,
-        "exec": "playerctl status 2>/dev/null | grep -q Playing && playerctl metadata --format '{{title}} - {{artist}}' || true",
-        "on-click": "playerctl play-pause",
-        "on-scroll-up": "playerctl next",
-        "on-scroll-down": "playerctl previous"
-    },
-    "clock#time": {
-        "format": "  {:%H:%M:%S}",
-        "timezone": "Europe/London",
-        "interval": 1,
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-    "clock#date": {
-        "format": "  {:%d %b, %a}"
-    },
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": " Muted",
-        "format-icons": {
-            "headphone": "",
-            "default": ["", "", ""],             
-        },
-         "on-click": "blueman-manager"
-    },
-    "network": {
-        "format-wifi": "  {essid}",
-        "format-ethernet": "🖧  {ifname}",
-        "format-disconnected": "⚠ Disconnected",
-        "on-click": "kitty -- nmtui"
-    },
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}  {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{icon} {time}",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "custom/power": {
-        "format": "⏻",
-        "on-click": "wlogout --protocol layer-shell --layout /etc/wlogout/layout --css ~/.config/wlogout/style.css"
-    }
+    "layer": "top", "position": "top", "height": 32, "margin-top": 6, "margin-left": 16, "margin-right": 16, "margin-bottom": 6, "spacing": 0,
+    "modules-left": ["custom/launcher", "sway/workspaces", "hyprland/workspaces", "custom/spotify", "custom/language"],
+    "modules-center": ["clock#time", "clock#date"], "modules-right": ["pulseaudio", "network", "battery", "custom/power"],
+    "custom/launcher": {"format": "Apps", "on-click": "rofi -show drun"},
+    "custom/language": {"format": "{}", "exec": "swaymsg -t get_inputs | jq -r '.[] | select(.type == \"keyboard\") | .xkb_active_layout_name' | head -n1", "interval": 1, "on-click": "swaymsg input type:keyboard xkb_switch_layout next"},
+    "sway/workspaces": {"disable-scroll": true, "all-outputs": true, "format": "{icon}", "format-icons": {"1": "●", "2": "●", "3": "●", "4": "●", "5": "●", "6": "●", "7": "●", "8": "●", "9": "●", "10": "●"}},
+    "hyprland/workspaces": {"disable-scroll": true, "all-outputs": true, "format": "{name}"},
+    "custom/spotify": {"format": "  {}", "escape": true, "interval": 1, "max-length": 25, "exec": "playerctl status 2>/dev/null | grep -q Playing && playerctl metadata --format '{{title}} - {{artist}}' || true", "on-click": "playerctl play-pause", "on-scroll-up": "playerctl next", "on-scroll-down": "playerctl previous"},
+    "clock#time": {"format": "  {:%H:%M:%S}", "timezone": "Europe/London", "interval": 1, "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"},
+    "clock#date": {"format": "  {:%d %b, %a}"},
+    "pulseaudio": {"format": "{icon} {volume}%", "format-muted": " Muted", "format-icons": {"headphone": "", "default": ["", "", ""]}, "on-click": "blueman-manager"},
+    "network": {"format-wifi": "  {essid}", "format-ethernet": "𖧧  {ifname}", "format-disconnected": "⚠ Disconnected", "on-click": "kitty -- nmtui"},
+    "battery": {"states": {"good": 95, "warning": 30, "critical": 15}, "format": "{icon}  {capacity}%", "format-charging": " {capacity}%", "format-plugged": " {capacity}%", "format-alt": "{icon} {time}", "format-icons": ["", "", "", "", ""], "on-click": "swaync-client -t -sw"},
+    "custom/power": {"format": "⏻", "on-click": "wlogout --protocol layer-shell --layout /etc/wlogout/layout --css ~/.config/wlogout/style.css"}
 }
