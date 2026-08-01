@@ -15,7 +15,7 @@ BASE_CONFIG_TEMPLATE = """{
     "clock#date": {"format": "  {:%d %b, %a}"},
     "pulseaudio": {"format": "{icon} {volume}%", "format-muted": " Muted", "format-icons": {"headphone": "", "default": ["", "", ""]}, "on-click": "blueman-manager"},
     "network": {"format-wifi": "  {essid}", "format-ethernet": "𖧧  {ifname}", "format-disconnected": "⚠ Disconnected", "on-click": "kitty -- nmtui"},
-    "battery": {"states": {"good": 95, "warning": 30, "critical": 15}, "format": "{icon}  {capacity}%", "format-charging": " {capacity}%", "format-plugged": " {capacity}%", "format-alt": "{icon} {time}", "format-icons": ["", "", "", "", ""]},
+    "battery": {"states": {"good": 95, "warning": 30, "critical": 15}, "format": "{icon}  {capacity}%", "format-charging": " {capacity}%", "format-plugged": " {capacity}%", "format-alt": "{icon} {time}", "format-icons": ["", "", "", "", ""], "on-click": "swaync-client -t -sw"},
     "custom/power": {"format": "⏻", "on-click": "wlogout --protocol layer-shell --layout /etc/wlogout/layout --css ~/.config/wlogout/style.css"}
 }"""
 
