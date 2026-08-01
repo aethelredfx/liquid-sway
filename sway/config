@@ -26,6 +26,7 @@ bindsym $mod+period exec rofi -show emoji
 bindsym $mod+Shift+e exec wlogout --protocol layer-shell --layout /etc/wlogout/layout --css ~/.config/wlogout/style.css
 bindsym $mod+space floating toggle; resize set width 650 px height 450 px; move position center
 bindsym $mod+s exec kitty python3 $HOME/.config/lshell.py
+bindsym $mod+p exec swaync-client -t -sw
 
 exec_always --no-startup-id pkill swayrd; swayrd
 bindsym Mod1+Tab exec swayr switch-to-urgent-or-lru-window
