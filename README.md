@@ -1,4 +1,9 @@
-# lshell
+  _     _          _ _ 
+ | |___| |__   ___| | |
+ | / __| '_ \ / _ \ | |
+ | \__ \ | | |  __/ | |
+ |_|___/_| |_|\___|_|_|
+                       
 Minimalist configuration for SwayFX (Wayland).
 
 ## Preview
