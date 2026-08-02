@@ -1,4 +1,4 @@
-#lshell
+# lshell
 
 Minimalist configuration for SwayFX (Wayland).
 
