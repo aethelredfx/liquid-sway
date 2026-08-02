@@ -32,6 +32,7 @@ Minimalist configuration for SwayFX (Wayland).
 | :--- | :--- | :--- |
 | **Applications** | | |
 | `Mod` + `s` | Config Settings | `kitty python3 $HOME/.config/lshell.py` |
+| `Mod` + `p` | Notifications Launcher | `swaync-client -t -sw` |
 | `Mod` + `Enter` | Open Terminal | `$term (Kitty)` |
 | `Mod` + `d` | App Launcher | `rofi -show drun` |
 | `Mod` + `c` | Clipboard Manager | `cliphist` |
