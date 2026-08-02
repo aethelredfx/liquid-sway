@@ -69,12 +69,20 @@
           "command": "pavucontrol -t 4"
         },
         {
-          "label": "",
-          "command": "kitty -e nmtui"
+          "label": "",
+          "command": "dolphin"
         },
         {
           "label": "",
           "command": "blueman-manager"
+        },
+        {
+          "label": "",
+          "command": "firefox"
+        },
+        {
+          "label": "",
+          "command": "spotify"
         }
       ]
     }
