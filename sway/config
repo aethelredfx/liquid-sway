@@ -168,3 +168,4 @@ for_window [app_id="waytrogen"] {
     move position center
 }
 floating_modifier $mod normal
+include ~/.config/sway/outputs
