@@ -1,0 +1,169 @@
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+set $term kitty
+set $browser firefox
+
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+}
+
+bindgesture swipe:3:right workspace prev
+bindgesture swipe:3:left workspace next
+bindgesture swipe:4:down exec rofi -show window
+
+# Keybinds
+bindsym $mod+Return exec $term
+bindsym $mod+n exec dolphin
+bindsym $mod+q kill
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+b exec firefox
+bindsym $mod+w exec waytrogen
+bindsym $mod+period exec rofi -show emoji
+bindsym $mod+Shift+e exec wlogout --protocol layer-shell --layout /etc/wlogout/layout --css ~/.config/wlogout/style.css
+bindsym $mod+space floating toggle; resize set width 650 px height 450 px; move position center
+bindsym $mod+s exec kitty python3 $HOME/.config/lshell.py
+bindsym $mod+p exec swaync-client -t -sw
+bindsym $mod+h exec kitty python3 $HOME/.config/netscan.py
+
+exec_always --no-startup-id pkill swayrd; swayrd
+bindsym Mod1+Tab exec swayr switch-to-urgent-or-lru-window
+bindsym --release Alt_L exec swayr nop
+bindsym $mod+Tab exec rofi -show window
+bindsym $mod+Shift+d exec rofi -show run
+
+exec_always wl-paste --type text --watch cliphist store
+exec_always wl-paste --type image --watch cliphist store
+bindsym $mod+c exec bash -c "cliphist list | rofi -dmenu -p '󰅇 Clipboard' | cliphist decode | wl-copy"
+
+floating_modifier $mod normal
+bindsym $mod+Shift+c reload
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+bindsym $mod+Control+Left move workspace to output left
+bindsym $mod+Control+Right move workspace to output right
+bindsym $mod+Control+Up move workspace to output up
+bindsym $mod+Control+Down move workspace to output down
+
+bindsym $mod+f fullscreen
+bindsym $mod+Shift+space floating toggle
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+mode "resize" {
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ --limit 1.3
+bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym Print exec grim "/home/ashwani/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S_grim.png')" && notify-send "Screenshot Saved" "Image saved to ~/Pictures/Screenshots/"
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+exec_always autotiling
+
+gaps top 2
+gaps inner 3
+gaps outer 1
+
+# for_window [class=".*"] border none
+
+include /etc/sway/config.d/*
+
+bindsym $mod+Shift+s exec --no-startup-id grim -g "$(slurp)" - | wl-copy && notify-send "Screenshot copied to clipboard"
+
+exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec_always swaync &
+bindsym $mod+Shift+n exec swaync-client -t -sw
+
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets,pkcs11
+exec xhost +
+exec_always xwaylandvideobridge
+
+for_window [title="Picture-in-Picture"] sticky enable
+
+blur enable
+blur_xray disable
+blur_passes 3
+blur_radius 7
+blur_brightness 1
+corner_radius 5
+default_dim_inactive 0.15
+
+exec_always "sleep 0.5 && waytrogen --restore"
+exec_always "pkill -x waybar; waybar > /dev/null 2>&1 &"
+
+input * {
+    xkb_layout "us,ru"
+    xkb_options "grp:alt_shift_toggle"
+}
+
+for_window [app_id="gsimplecal"] {
+    floating enable
+    border none
+    move position center
+}
+client.focused #ffffff #ffffff #000000 #ffffff #ffffff
+
+default_border pixel 1
+default_floating_border pixel 1
+for_window [app_id="waytrogen"] {
+    floating enable
+    move position center
+}
+floating_modifier $mod normal
+include ~/.config/sway/outputs
+
