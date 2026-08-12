@@ -31,6 +31,7 @@ Minimalist configuration for SwayFX (Wayland).
 | Keybind | Action | Command |
 | :--- | :--- | :--- |
 | **Applications** | | |
+| `Mod` + `h` | Network Scan | `kitty python3 $HOME/.config/netscan.py` |
 | `Mod` + `s` | Config Settings | `kitty python3 $HOME/.config/lshell.py` |
 | `Mod` + `p` | Notifications Launcher | `swaync-client -t -sw` |
 | `Mod` + `Enter` | Open Terminal | `$term (Kitty)` |
