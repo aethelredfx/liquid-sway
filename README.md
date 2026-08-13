@@ -37,7 +37,7 @@ Minimalist configuration for SwayFX (Wayland).
 | `Mod` + `p` | Notifications Launcher | `swaync-client -t -sw` |
 | `Mod` + `Enter` | Open Terminal | `$term (Kitty)` |
 | `Mod` + `d` | App Launcher | `rofi -show drun` |
-| `Mod` + `c` | Cryptography Monitor | `kitty python3 $HOME/.config/cryptosee.py` |
+| `Mod` + `c` | Crypto Monitor | `kitty python3 $HOME/.config/cryptosee.py` |
 | `Mod` + `b` | Browser | `firefox` |
 | `Mod` + `n` | File Manager | `dolphin` |
 | `Mod` + `w` | Wallpaper Manager | `waytrogen` |
