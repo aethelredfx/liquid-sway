@@ -28,6 +28,7 @@ bindsym $mod+space floating toggle; resize set width 650 px height 450 px; move 
 bindsym $mod+s exec kitty python3 $HOME/.config/lshell.py
 bindsym $mod+p exec swaync-client -t -sw
 bindsym $mod+h exec kitty python3 $HOME/.config/netscan.py
+bindsym $mod+m exec kitty python3 $HOME/.config/passwords.py
 
 exec_always --no-startup-id pkill swayrd; swayrd
 bindsym Mod1+Tab exec swayr switch-to-urgent-or-lru-window
