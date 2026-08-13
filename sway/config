@@ -29,6 +29,7 @@ bindsym $mod+s exec kitty python3 $HOME/.config/lshell.py
 bindsym $mod+p exec swaync-client -t -sw
 bindsym $mod+h exec kitty python3 $HOME/.config/netscan.py
 bindsym $mod+m exec kitty python3 $HOME/.config/passwords.py
+bindsym $mod+c exec kitty python3 $HOME/.config/cryptosee.py
 
 exec_always --no-startup-id pkill swayrd; swayrd
 bindsym Mod1+Tab exec swayr switch-to-urgent-or-lru-window
@@ -38,7 +39,6 @@ bindsym $mod+Shift+d exec rofi -show run
 
 exec_always wl-paste --type text --watch cliphist store
 exec_always wl-paste --type image --watch cliphist store
-bindsym $mod+c exec bash -c "cliphist list | rofi -dmenu -p '󰅇 Clipboard' | cliphist decode | wl-copy"
 
 floating_modifier $mod normal
 bindsym $mod+Shift+c reload
