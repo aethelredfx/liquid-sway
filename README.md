@@ -31,13 +31,13 @@ Minimalist configuration for SwayFX (Wayland).
 | Keybind | Action | Command |
 | :--- | :--- | :--- |
 | **Applications** | | |
-| `Mod` + `m` | Network Scan | `kitty python3 $HOME/.config/passwords.py` |
+| `Mod` + `m` | Passwords Manager | `kitty python3 $HOME/.config/passwords.py` |
 | `Mod` + `h` | Network Scan | `kitty python3 $HOME/.config/netscan.py` |
 | `Mod` + `s` | Config Settings | `kitty python3 $HOME/.config/lshell.py` |
 | `Mod` + `p` | Notifications Launcher | `swaync-client -t -sw` |
 | `Mod` + `Enter` | Open Terminal | `$term (Kitty)` |
 | `Mod` + `d` | App Launcher | `rofi -show drun` |
-| `Mod` + `c` | Clipboard Manager | `cliphist` |
+| `Mod` + `c` | Cryptography Monitor | `kitty python3 $HOME/.config/cryptosee.py` |
 | `Mod` + `b` | Browser | `firefox` |
 | `Mod` + `n` | File Manager | `dolphin` |
 | `Mod` + `w` | Wallpaper Manager | `waytrogen` |
