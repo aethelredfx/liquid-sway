@@ -73,7 +73,7 @@ yay -S waytrogen wlogout swayfx
 fastfetch --gen-config
 rm -rf ~/.config/waybar/config.jsonc
 cd ~
-git clone https://github.com/aethelredfx/lshell
+git clone https://github.com/deploydy/lshell
 cp -r ~/lshell/* ~/.config/
 rm -rf ~/lshell
 ```
