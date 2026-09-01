@@ -1,0 +1,122 @@
+
+window#waybar { 
+    background-color: transparent; 
+    font-family: "JetBrainsMono Nerd Font", "Roboto", sans-serif; 
+    font-size: 13px; 
+    font-weight: bold; 
+    color: #ffffff; 
+}
+
+#workspaces { 
+    background: rgba(255, 255, 255, 0.08); 
+    border-radius: 16px; 
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    margin: 2px 4px; 
+    padding: 3px 4px; 
+}
+
+#workspaces button { 
+    background: transparent; 
+    color: rgba(255, 255, 255, 0.4); 
+    border: none; 
+    border-radius: 10px; 
+    margin: 2px 2px; 
+    padding: 0px 10px; 
+    transition: background 0.4s cubic-bezier(0.25, 1, 0.5, 1), color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#workspaces button.focused, 
+#workspaces button.active { 
+    background: rgba(125, 207, 255, 0.2); 
+    color: #ffffff; 
+}
+
+#workspaces button:hover { 
+    background: rgba(255, 255, 255, 0.1); 
+    color: #ffffff;
+}
+
+#custom-launcher, 
+#custom-language, 
+#clock.time, 
+#clock.date, 
+#pulseaudio, 
+#network, 
+#battery { 
+    background: rgba(255, 255, 255, 0.08); 
+    border-radius: 16px; 
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    margin: 2px 4px; 
+    padding: 2px 20px; 
+    color: #ffffff; 
+    transition: background 0.2s ease, border-color 0.2s ease, padding 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#custom-power {
+    background: rgba(255, 255, 255, 0.08); 
+    border-radius: 16px; 
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    margin: 2px 4px; 
+    padding: 2px 14px;
+    color: #ffffff;
+    transition: background 0.2s ease, border-color 0.2s ease, padding 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#custom-launcher:hover, 
+#custom-language:hover, 
+#clock.time:hover, 
+#clock.date:hover, 
+#pulseaudio:hover, 
+#network:hover, 
+#battery:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.4);
+    padding: 2px 40px; 
+}
+
+#custom-power:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.4);
+    padding: 2px 22px;
+}
+
+#custom-spotify { 
+    background: rgba(125, 207, 255, 0.1); 
+    border-radius: 16px; 
+    border: 1px solid rgba(125, 207, 255, 0.2); 
+    margin: 2px 4px; 
+    padding: 2px 14px; 
+    color: #7dcfff; 
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+#custom-spotify:hover {
+    background: rgba(125, 207, 255, 0.2);
+    border-color: rgba(125, 207, 255, 0.4);
+}
+
+#battery.charging, 
+#battery.plugged { 
+    color: #9ece6a; 
+}
+
+#battery.warning { 
+    color: #e0af68; 
+}
+
+#battery.critical:not(.charging) { 
+    color: #f7768e; 
+    animation-name: blink; 
+    animation-duration: 0.5s; 
+    animation-timing-function: linear; 
+    animation-iteration-count: infinite; 
+    animation-direction: alternate; 
+}
+
+@keyframes blink { 
+    to { 
+        background: rgba(247, 118, 142, 0.25); 
+        border-color: rgba(247, 118, 142, 0.4);
+        color: #ffffff; 
+    } 
+}
