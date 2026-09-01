@@ -71,6 +71,7 @@ sudo pacman -S git autotiling swaybg swaync waybar kitty rofi swaylock papirus-i
 sudo pacman -S python-cryptography python-requests python-beautifulsoup4 python-rich
 yay -S waytrogen wlogout swayfx
 fastfetch --gen-config
+rm -rf ~/.config/waybar/config.jsonc
 cd ~
 git clone https://github.com/aethelredfx/lshell
 cp -r ~/lshell/* ~/.config/
